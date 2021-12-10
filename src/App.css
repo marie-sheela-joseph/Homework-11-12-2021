@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  background: #ebf0f5;
+}
+.container {
+  max-width: 1170px;
+  padding: 0 30px;
+  margin: auto;
+}
+.space {
+  padding: 3rem 0;
+}
+.d-grid {
+  display: grid;
+}
+.mb-10 {
+  margin-bottom: 1rem;
+}
+.p-5 {
+  padding: 0.5rem;
+}
+.mh {
+  margin: 0 5px;
+}
+.d-flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-around {
+  justify-content: space-around;
+}
+
+/*  */
+.movieCard-grid {
+  grid-template-columns: 1fr;
+  grid-gap: 3rem;
+}
+.filter {
+  background: #cdcfd1;
+  padding: 2rem 0;
+}
+.filter button {
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+.btn-category {
+  margin: 0 1rem;
+}
+
+/*  */
+@media (min-width: 576px) {
+  .movieCard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .movieCard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .movieCard-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
