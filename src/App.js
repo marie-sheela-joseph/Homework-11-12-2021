@@ -8,6 +8,7 @@ function App() {
   const [categories, setCategories] = useState([])
   const [isFilterOn, setIsFilterOn] = useState(false)
   const [filteredData, setFilteredData] = useState([])
+
   useEffect(() => {
     setCategories(Array.from(new Set(data.map(el => el.category))))
   }, [data])
@@ -22,6 +23,15 @@ function App() {
     let a
     a = data.map(el => {
       if (el.id === id) { return like ? { ...el, likes: el.likes + 1 } : { ...el, likes: el.likes - 1 } }
+      else { return el }
+    })
+    setData(a)
+  }
+
+  const toggleDisLike = (id, disLike) => {
+    let a
+    a = data.map(el => {
+      if (el.id === id) { return disLike ? { ...el, dislikes: el.dislikes + 1 } : { ...el, dislikes: el.dislikes - 1 } }
       else { return el }
     })
     setData(a)
@@ -68,12 +78,14 @@ function App() {
               movie={el}
               deleteFn={deleteFn}
               toggleLike={toggleLike}
+              toggleDisLike={toggleDisLike}
             ></MovieCard>) :
               filteredData.map(el => <MovieCard
                 key={el.id}
                 movie={el}
                 deleteFn={deleteFn}
                 toggleLike={toggleLike}
+                toggleDisLike={toggleDisLike}
               ></MovieCard>)
             }
           </div>
